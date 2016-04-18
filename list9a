@@ -1,5 +1,5 @@
-//// Exerciset #9a
-String title=  "Exercise 9a:  array of integers";
+//// Project #9
+String title=  "Project 9a:  array of integers";
 String help=  "Press key with first letter of a function (or 'q' to quit)";
 String author=  "Your Name";
 
@@ -33,6 +33,9 @@ void draw() {
   text( title, width/4, 20 );
   textSize(12);
   text( help, width/4, 40 );
+  text( "Keys:  b, s, i, d, t", width/4, 55 );
+
+  
   text( author, 20, height-20 );
 }
 
@@ -66,9 +69,9 @@ void big( int a[], int m ) {
     if (a[j] > a[w]) w=j;
   }
   int tmp;
-  tmp=  p[m-1];              // Save last element of array.
-  p[m-1]=  p[w];             // Store biggest at end.
-  p[w]=  tmp;
+  tmp=  a[m-1];              // Save last element of array.
+  a[m-1]=  a[w];             // Store biggest at end.
+  a[w]=  tmp;
 }
 
 void small( int a[], int m ) {
@@ -78,10 +81,10 @@ void small( int a[], int m ) {
   for (int j=1; j<m; j++) {
     if (a[j] < a[w]) w=j;
   }
-  tmp=  p[0];                // Save first element of array.
-  p[0]=  p[w];               // Move selected element to the beginning.
-  p[w]=  tmp;
-  swap( a, w, 0 );
+  int tmp;
+  tmp=  a[0];                // Save first element of array.
+  a[0]=  a[w];               // Move selected element to the beginning.
+  a[w]=  tmp;
 }
 
 void inc( int a[], int m ) {
